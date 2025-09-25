@@ -33,10 +33,12 @@ for i in range(1, ws.max_row + 1):
      continue
 
 # 2. H열에 총점(SUM 이용), I열에 성적 정보 추가
-for i in range(1, ws.max_row + 1):
+ws['H1'].value = '총점'
+for i in range(2, ws.max_row + 1):
     ws[f'H{i}'] = f'=SUM(B{i}:G{i})'
 
 # 3. I열에 성적 정보 추가
+ws['I1'].value = '학점'
 # - 총점 90 이상 A, 80 이상 B, 70 이상 C, 나머지 D
 # 3. 출석이 5 미만인 학생은 총점 상관없이 F
 
