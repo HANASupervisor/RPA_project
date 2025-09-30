@@ -1,0 +1,23 @@
+#!/usr/bin/env sh
+MSG_FILE="$1"
+FIRST_LINE=$(head -n 1 "$MSG_FILE")
+PATTERN='^(feat|fix|docs|refactor|style|test|chore)(\([^)]+\))?: .+$'
+
+echo "$FIRST_LINE" | grep -Eq "$PATTERN"
+if [ $? -ne 0 ]; then
+  echo ""
+  echo "[commit-msg 훅] 커밋 메시지 첫 줄이 컨벤션과 다릅니다."
+  echo "형식: type(scope?): 제목  (type=feat|fix|docs|refactor|style|test|chore)"
+  echo "예시: feat: 로그인 기능 추가"
+  echo ""
+  echo "현재 입력: $FIRST_LINE"
+  exit 1
+fi
+
+echo "$FIRST_LINE" | grep -Eq '\.$'
+if [ $? -eq 0 ]; then
+  echo ""
+  echo "[commit-msg 훅] 제목 끝의 마침표(.)는 생략해 주세요."
+  exit 1
+fi
+exit 0
