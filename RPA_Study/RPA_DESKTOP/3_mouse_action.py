@@ -1,5 +1,7 @@
 import pyautogui
 
+# pyautogui.mouseInfo()
+
 # 파일명을 클릭하게 해보자 
 pyautogui.sleep(10) # 10초 대기
 # print(pyautogui.position()) # 내 현자 마우스의 위치를 찾는다. 
@@ -32,8 +34,8 @@ pyautogui.sleep(10) # 10초 대기
 
 # 마우스로 드래그앤 드랍으로 창을 움직여보자
 # print(pyautogui.position())
-# pyautogui.moveTo(1198,593)
-# pyautogui.drag(100, 0)
+pyautogui.moveTo(846,239)
+pyautogui.drag(100, 0, duration=3)
 # 이렇게하면 마우스이동만하고 창이 움직이지않는것처럼 보인다. 너무빨라서 그런거임. 그래서 이문제를 해결하기위해서는 duration을 적용한다. 
 
 
@@ -47,4 +49,4 @@ pyautogui.sleep(10) # 10초 대기
 
 
 
-pyautogui.scroll(-800) # 양수이면 위방향으로, 음수이면 아래방향으로 300만큼 스크롤
+# pyautogui.scroll(-800) # 양수이면 위방향으로, 음수이면 아래방향으로 300만큼 스크롤
