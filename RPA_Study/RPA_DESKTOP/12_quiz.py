@@ -14,21 +14,20 @@
 import pyautogui
 import pyperclip
 # 1. 그림판 실행(단축키: win + r, 입력값: mspaint) 및 최대화
-pyautogui.keyDown('win')
-pyautogui.keyDown('r')
-pyautogui.keyUp('r')
-pyautogui.keyUp('win')
+# pyautogui.keyDown('win')
+# pyautogui.keyDown('r')
+# pyautogui.keyUp('r')
+# pyautogui.keyUp('win')
+pyautogui.hotkey('win', 'r')
 pyautogui.write('mspaint')
 # 위와같이 keydown keyup써서 해도되고 그냥 hotkey로 간단하게 해결해도가능
 pyautogui.hotkey('enter')
-pyautogui.sleep(1)
+pyautogui.sleep(2)
 
 
 # 화면 최대화
 windows = pyautogui.getAllWindows()
 cands = [w for w in windows if w.title and ('그림판' in w.title or 'paint' in w.title.lower())]
-
-
 
 draw_page = cands[0]
 draw_page.activate()
