@@ -128,13 +128,31 @@ import os
 # os.rename('new_folder', 'new_folder_rename')
 
 # 폴더 지우기
-os.rmdir('new_folder_rename') # rmdir은 폴더안이 지워있을때만 삭제가능
+# os.rmdir('new_folder_rename') # rmdir은 폴더안이 지워있을때만 삭제가능
 # 그렇다면 폴더안이 비어있지않으면 어떻게 지워야할까?
 
 # 아래 패키지를 이용하자
-# import shutil
+import shutil
 # shutil.rmtree('new_folders') # 폴더 안이 비어있지 않아도 완전 삭제가능
 # 모든 파일이 삭제될수 있으므로 주의!!!!!!!!!!!!!!!!
 
 
-# 파일 복사하기
+# # 파일 복사하기
+# # 어떤 파일을 폴더 안으로 복사하기
+# shutil.copy('playbutton.png', 'test_folder') # 원본 파일 경로, 대상 폴더 경로
+# # 어떤 파일을 폴더안에 새로운 파일 이름으로 복사하기
+# shutil.copy('playbutton.png', 'test_folder/copied_playbutton.png') # 원본 경로, 대상경로
+# # copyfile을 쓸경우 디렉토리만하면안되고 안에 파일명까지 다 설정해줘야한다.
+# shutil.copyfile('playbutton.png', 'test_folder/copied_playbutton1.png')
+
+# shutil.copy2('playbutton.png', 'test_folder/copied_playbutton2.png')
+
+# copy, copyfile: 메타정보 복사 X
+# copy2: 메타정보 복사 O
+
+# 폴더 복사
+# shutil.copytree('test_folder', 'test_folder2') # 원본 폴더 경로, 대상 폴더 경로 *** 하위폴더까지 다 포함해서 복사됨
+
+# # 폴더 이동
+# shutil.move('test_folder3', 'test_folder')
+shutil.move('test_folder_rename', 'test_folder')
