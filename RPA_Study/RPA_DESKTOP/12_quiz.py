@@ -59,7 +59,7 @@ pyautogui.hotkey('ctrl', 'v')
 
 
 # 3. 5초 대기 후 그림판 종료
-#  이때, 저저장하지 않음을 자동으로 선택하여 프로그램이 완전 종료되도록 함. 
+#  이때, 저장하지 않음을 자동으로 선택하여 프로그램이 완전 종료되도록 함. 
 pyautogui.sleep(5)
 x= 1900; y= 26
 pyautogui.moveTo(x,y)
