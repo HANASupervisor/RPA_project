@@ -1,5 +1,22 @@
 # Created by https://www.toptal.com/developers/gitignore/api/python
 # Edit at https://www.toptal.com/developers/gitignore?templates=python
+# Local/editor
+.vscode/
+.idea/
+
+# OS noise
+.DS_Store
+Thumbs.db
+
+# Selenium driver bundle docs
+LICENSE.chromedriver
+THIRD_PARTY_NOTICES.chromedriver
+
+# Local scripts / secrets
+setting.bat
+
+# Browser
+chromedriver.exe
 
 ### Python ###
 # Byte-compiled / optimized / DLL files
